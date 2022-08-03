@@ -4,7 +4,7 @@ import { api } from "./api"
 
 
 
-const transformData = data => {
+export const transformData = data => {
     const PROPORTIONALITY_RATIO = 3.6;
     const convertKMHtoMPS = kmh => kmh / PROPORTIONALITY_RATIO
     if(!data) return
@@ -55,7 +55,6 @@ export const useFetchData = city => {
                     q: city
                 }
             }).then(({ data }) => {
-                console.log(data)
                 changeBackground(data?.current.condition.text.toLowerCase().split(' ').join(''))
                 return transformData(data)
             }

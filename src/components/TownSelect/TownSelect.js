@@ -6,7 +6,15 @@ import WeatherContext from "../../context/weather";
 
 const CitiesList = ({setCurrentCity}) => {
 
-    const {cities_list} = useContext(WeatherContext)
+    const cities_list = [
+        {name: "Dallol"}, 
+        {name: "Fairbanks"}, 
+        {name: "London"}, 
+        {name: "Recife"}, 
+        {name: "Vancouver"}, 
+        {name: "Yakutsk"}
+    ]
+
     return(
     <div className="grid-container">
         {cities_list.map(city => {
