@@ -1,17 +1,18 @@
 import React from "react";
-import worldwide from '../assets/worldwidewhite.png'
-import './css/TownSelect.css'
+import worldwide from '../../assets/worldwidewhite.png'
+import './TownSelect.css'
+
+const LIST_Of_POSSIBLE_CITIES = [
+    {name: "Dallol", country: "(NG)"}, 
+    {name: "Fairbanks", country: "(US)"}, 
+    {name: "London", country: "(GB)"}, 
+    {name: "Recife", country: "(BR)"}, 
+    {name: "Vancouver", country: "(CA)"}, 
+    {name: "Yakutsk", country: "(RU)"}
+]
 
 const CitiesList = ({setCurrentCity}) => {
 
-    const LIST_Of_POSSIBLE_CITIES = [
-        {name: "Dallol", country: "(NG)"}, 
-        {name: "Fairbanks", country: "(US)"}, 
-        {name: "Londres", country: "(GB)"}, 
-        {name: "Recife", country: "(BR)"}, 
-        {name: "Vancouver", country: "(CA)"}, 
-        {name: "Yakutsk", country: "(RU)"}
-    ]
 
     return(
     <div className="grid-container">

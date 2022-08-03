@@ -6,8 +6,9 @@ import { api } from "./api"
 const transformData = data => {
     const PROPORTIONALITY_RATIO = 3.6;
     const convertKMHtoMPS = kmh => kmh / PROPORTIONALITY_RATIO
-
-    let forecastday = data.forecast.forecastday[0]
+    console.log(data)
+    if(!data) return
+    let forecastday = data.forecast?.forecastday[0]
     let { maxtemp_c, mintemp_c } = forecastday.day
     let { sunrise, sunset } = forecastday.astro
 
@@ -20,7 +21,7 @@ const transformData = data => {
             dawn: forecastday.hour[3].temp_c,
             morning: forecastday.hour[9].temp_c,
             afternoon: forecastday.hour[15].temp_c,
-            nigth: forecastday.hour[21].temp_c
+            night: forecastday.hour[21].temp_c
         },
         condition: {
             icon: {
@@ -28,7 +29,7 @@ const transformData = data => {
                 dawn: forecastday.hour[3].condition.icon,
                 morning: forecastday.hour[9].condition.icon,
                 afternoon: forecastday.hour[15].condition.icon,
-                nigth: forecastday.hour[21].condition.icon
+                night: forecastday.hour[21].condition.icon
             },
             text: data.current.condition.text,
         },

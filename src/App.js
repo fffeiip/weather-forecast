@@ -1,7 +1,7 @@
 import './App.css';
 import { ReactComponent as BackArrow } from './assets/back-arrow-navigation-svgrepo-com.svg'
-import TownSelect from './components/TownSelect';
-import CityWeather from './components/CityWeather';
+import TownSelect from './components/TownSelect/TownSelect';
+import CityWeather from './components/CityWeather/CityWeather';
 
 import { useState } from 'react';
 
