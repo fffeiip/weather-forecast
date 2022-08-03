@@ -1,6 +1,26 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  mix-blend-mode: difference;
+
 }
+
+main {
+  width: 100vw;
+  height: 100vh;
+  
+}
+
+.App {
+  /* FAZER MUDAR CONFORME O TEMPO */
+  /* background-image: linear-gradient(rgb(221, 221, 221), rgb(156, 160, 156));   */
+  background-color: black;
+  text-align: center;
+  mix-blend-mode: difference;
+}
+
+
+
 
 .App-logo {
   height: 40vmin;
@@ -14,19 +34,13 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  mix-blend-mode: difference;
+  padding: 1rem;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {

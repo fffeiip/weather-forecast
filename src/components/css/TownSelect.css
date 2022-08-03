@@ -1,0 +1,35 @@
+button  {
+    background: black;
+    color: white;
+    border: 0;
+    grid-area: auto;
+}
+
+button:hover {
+    color: black;
+    background: white;
+}
+
+h1 {
+    color: white;
+    font-size: 3rem;
+}
+h4 {
+    color: gray;
+    font-size: 2rem;
+}
+.grid-container {
+    display: grid;
+    padding-inline: 20vw;
+    gap: 2vw;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-item {
+    font-size: 1.1rem;
+}
+
+img {
+    width: 20vw;
+    padding: 2vw
+}
