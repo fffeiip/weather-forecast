@@ -6,7 +6,6 @@ import { api } from "./api"
 const transformData = data => {
     const PROPORTIONALITY_RATIO = 3.6;
     const convertKMHtoMPS = kmh => kmh / PROPORTIONALITY_RATIO
-    console.log(data)
     if(!data) return
     let forecastday = data.forecast?.forecastday[0]
     let { maxtemp_c, mintemp_c } = forecastday.day
@@ -44,6 +43,7 @@ const transformData = data => {
 export const useFetchData = city => {
     // @TODO animação de loading
     const [loading, setLoading] = useState(false)
+
     const [weatherData, setWeatherData] = useState(null)
 
     useEffect(() => {
@@ -57,6 +57,6 @@ export const useFetchData = city => {
         }
         fetchData()
         return () => setLoading(false)
-    }, [])
+    }, [city])
     return weatherData
 }

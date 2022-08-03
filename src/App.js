@@ -9,14 +9,14 @@ import { useState } from 'react';
 function App() {
   const [currentCity, setCurrentCity] = useState("")
   return (
-    <div className="App">
-      <nav className='App-header'>
-        {!!currentCity && <BackArrow fill="white" width="8vw" height="4vh" onClick={() => setCurrentCity("")} />}
-      </nav>
-      <main>
-        {!!currentCity ? <CityWeather city={currentCity} /> : <TownSelect setCurrentCity={setCurrentCity} />}
-      </main>
-    </div>
+      <div className="App">
+        <nav className='App-header'>
+          {!!currentCity && <BackArrow fill="white" width="8vw" height="4vh" onClick={() => setCurrentCity("")} />}
+        </nav>
+        <main>
+          {!!currentCity ? <CityWeather city={currentCity} /> : <TownSelect setCurrentCity={setCurrentCity} />}
+        </main>
+      </div>
   );
 }
 

@@ -88,7 +88,7 @@ export const PeriodForecast = ({data}) => {
     {Object.keys(day_periods).map(period => {
         let {icon_location, temperature} = day_periods[period]
         return (
-            <div className="temperatureForecastElement">
+            <div key={period} className="temperatureForecastElement">
                 <small>{period}</small>
                 <WeatherConditionIcon url={icon_location}/>
                 <p>{`${Math.floor(temperature)} ºC`}</p>
