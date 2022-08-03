@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
+import WeatherContext from "../../context/weather";
 import { api } from "./api"
 
 
@@ -43,7 +44,7 @@ const transformData = data => {
 export const useFetchData = city => {
     // @TODO animação de loading
     const [loading, setLoading] = useState(false)
-
+    const {changeBackground} = useContext(WeatherContext)
     const [weatherData, setWeatherData] = useState(null)
 
     useEffect(() => {
@@ -53,7 +54,12 @@ export const useFetchData = city => {
                 params: {
                     q: city
                 }
-            }).then(({ data }) => transformData(data)).then(weatherData => setWeatherData(weatherData))
+            }).then(({ data }) => {
+                console.log(data)
+                changeBackground(data?.current.condition.text.toLowerCase().split(' ').join(''))
+                return transformData(data)
+            }
+            ).then(weatherData => setWeatherData(weatherData))
         }
         fetchData()
         return () => setLoading(false)

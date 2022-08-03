@@ -15,21 +15,25 @@ export const WeatherProvider = ({children}) => {
         {name: "Yakutsk"}
     ]
 
-    const LIST_OF_POSSIBLE_WEATHERS = [
-        {name: 'sunny' , background: '--sunny'},
-        {name: 'partly cloudy' , background: '--cloudy'},
-        {name: 'overcast' , background: '--cloudy'},
-        {name: 'light rain', background: '--rain'},
-        {name: 'rain', background: '--rain'},
-    ]
+    const LIST_OF_POSSIBLE_WEATHERS = {
+        sunny: '--sunny',
+        partlycloudy: '--cloudy',
+        overcast: '--cloudy',
+        lightrain: '--rain',
+        rain: '--rain',
+        home: '--home',
+        default: '--clear'
+    }
+    
 
-    function changeWeather(weather) {
-        if(!LIST_OF_POSSIBLE_WEATHERS[weather]) return
-        setBackground(LIST_OF_POSSIBLE_WEATHERS[weather].background)
+    function changeBackground(weather) {
+        if(!LIST_OF_POSSIBLE_WEATHERS[weather]) return LIST_OF_POSSIBLE_WEATHERS.default
+        console.log(LIST_OF_POSSIBLE_WEATHERS[weather])
+        setBackground(LIST_OF_POSSIBLE_WEATHERS[weather])
     }
 
     return (
-        <WeatherContext.Provider value={{cities_list: LIST_OF_POSSIBLE_CITIES, background, setLoading, changeWeather}}>
+        <WeatherContext.Provider value={{cities_list: LIST_OF_POSSIBLE_CITIES, background, setLoading, changeBackground}}>
             {children}
         </WeatherContext.Provider>
     )

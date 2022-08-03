@@ -1,22 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import worldwide from '../../assets/worldwidewhite.png'
 import './TownSelect.css'
+import WeatherContext from "../../context/weather";
 
-const LIST_Of_POSSIBLE_CITIES = [
-    {name: "Dallol", country: "(NG)"}, 
-    {name: "Fairbanks", country: "(US)"}, 
-    {name: "London", country: "(GB)"}, 
-    {name: "Recife", country: "(BR)"}, 
-    {name: "Vancouver", country: "(CA)"}, 
-    {name: "Yakutsk", country: "(RU)"}
-]
 
 const CitiesList = ({setCurrentCity}) => {
 
-
+    const {cities_list} = useContext(WeatherContext)
     return(
     <div className="grid-container">
-        {LIST_Of_POSSIBLE_CITIES.map(city => {
+        {cities_list.map(city => {
             return( 
                 <button className="grid-item" 
                 key={`${city.name}${city.country}`}

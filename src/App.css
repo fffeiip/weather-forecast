@@ -1,8 +1,11 @@
 * {
   margin: 0;
   padding: 0;
-  mix-blend-mode: difference;
-
+  --clear: linear-gradient(rgb(157, 199, 202), rgb(108, 179, 189));   
+  --cloudy: linear-gradient(rgb(221, 221, 221), rgb(156, 160, 156));   
+  --rain: linear-gradient(rgb(120, 175, 209), rgb(129, 136, 150));   
+  --sunny : linear-gradient(rgb(194, 190, 138), rgb(189, 184, 108)); 
+  --home: linear-gradient(rgb(0, 0, 0), rgb(37, 37, 37)); 
 }
 
 main {
@@ -12,11 +15,8 @@ main {
 }
 
 .App {
-  /* FAZER MUDAR CONFORME O TEMPO */
-  /* background-image: linear-gradient(rgb(221, 221, 221), rgb(156, 160, 156));   */
-  background-color: black;
+  background-image: var(--home);
   text-align: center;
-  mix-blend-mode: difference;
 }
 
 
