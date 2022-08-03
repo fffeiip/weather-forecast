@@ -1,15 +1,7 @@
 import React from "react"
 
 import { WeatherConditionIcon } from "./WeatherConditionIcon"
-import {ReactComponent as Arrow} from '../../assets/back-arrow-navigation-svgrepo-com.svg'
 
-const TemperatureForecast = ({temperature, rotation}) => {
-    return( 
-        <span className="temperatureForecast">
-            <Arrow transform={`rotate(${rotation})`} fill="white" width="0.8rem"/> <p>{`${Math.floor(temperature)}º`}</p>
-        </span>
-    )
-}
 
 export const MainInformation = ({data}) => {
     if(!data) return
@@ -18,20 +10,12 @@ export const MainInformation = ({data}) => {
     
     return (<>
     <div className="temperatures-container">
-        <h1 className="currentTemperature">{current}</h1>
-        {/* // @TODO arrumar isso */}
-        <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            paddingTop: "5vh",
-            alignItems: 'flex-start',
-            justifyContent: 'center'
-        }}>
-            <span>ºC</span>
-            <TemperatureForecast rotation="90" temperature={max}/>
-            <TemperatureForecast rotation="-90" temperature={min}/>
-
-        </div>
+    <h1 className="currentTemperature">{current}</h1>
+    <div className="temperatures-info">
+        <div><span>ºC</span></div>
+        <p>&uarr;{`${Math.floor(max)}º`}</p>
+        <p>&darr;{`${Math.floor(min)}º`}</p>
+    </div>
 
     </div>
     <WeatherConditionIcon url={icon_location} /> </>

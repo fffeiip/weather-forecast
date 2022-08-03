@@ -27,6 +27,9 @@ h1, h4 {
 .temperatureForecast>p {
     padding: 0.5rem;
 }
+.currentTemperature {
+    font-size: 5rem;
+}
 
 .temperatureForecastList {
     display: flex;
@@ -34,15 +37,22 @@ h1, h4 {
     justify-content: space-evenly;
     padding-top: 1rem;
 }
+
+.temperatures-info>div{
+    display:flex; 
+    flex-direction:row; 
+    justify-content: flex-end;
+}
+
 .temperatureForecastElement {
     flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .temperatureForecastElement>small,p {
     mix-blend-mode: difference;
-
 }
 
 

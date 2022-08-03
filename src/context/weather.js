@@ -22,6 +22,7 @@ export const WeatherProvider = ({children}) => {
         lightrain: '--rain',
         rain: '--rain',
         home: '--home',
+        mist: '--cloudy',
         default: '--clear'
     }
     
